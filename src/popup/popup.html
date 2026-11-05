@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>CloseGuard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <h1>CloseGuard</h1>
+    <p class="sub">Presses &ldquo;close&rdquo; on interrupting ads. Nothing leaves your device.</p>
+
+    <section aria-label="Settings" class="toggles">
+      <label class="row"><span>Enabled</span><input type="checkbox" id="enabled" role="switch"></label>
+      <label class="row"><span>Generic pop-up detection</span><input type="checkbox" id="genericMode" role="switch"></label>
+      <label class="row"><span id="siteLabel">Disable on this site</span><input type="checkbox" id="siteDisabled" role="switch" aria-describedby="siteLabel"></label>
+    </section>
+
+    <section aria-label="Statistics">
+      <dl class="stats">
+        <div><dt>Today</dt><dd id="today">0</dd></div>
+        <div><dt>Total</dt><dd id="total">0</dd></div>
+        <div><dt>Reopened</dt><dd id="reopened">0</dd></div>
+        <div><dt>Errors</dt><dd id="errors">0</dd></div>
+      </dl>
+    </section>
+    <p id="status" role="status" aria-live="polite" class="sub"></p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
