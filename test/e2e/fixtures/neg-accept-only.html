@@ -1,0 +1,8 @@
+<!doctype html>
+<!-- modeled on generic accept-only banner pattern, captured/authored 2026-11-05, NOT a live capture -->
+<html lang="en"><head><meta charset="utf-8"><title>fixture</title>
+<style>body{margin:0;font-family:sans-serif;min-height:100vh}.modal{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center}.box{background:#fff;padding:24px;min-width:300px;position:relative}</style>
+<script>window.__closed=0;</script></head><body>
+<main><h1>Page content</h1><p>Article text.</p></main>
+<script>setTimeout(()=>{document.body.insertAdjacentHTML('beforeend', `<div class="modal" id="ov"><div class="box" role="dialog" aria-modal="true"><h2>Notice</h2><p>We updated our terms. Subscribe to offers.</p><button id="x">Accept</button></div></div>`);document.getElementById('x').addEventListener('click',()=>{window.__closed++;});},300);</script>
+</body></html>
