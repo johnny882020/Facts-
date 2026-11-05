@@ -21,7 +21,7 @@ Adapter.find(DOM)  ->  features.ts (DOM -> plain data)  ->  guard.ts (PURE rules
 
 ## 4. Guard — ordered rules (first match wins; deny by default)
 1. settings.enabled false / host disabled -> deny. 2. control or overlay not visible -> deny.
-3. NEGATIVE labels (accept, agree, allow, subscribe, buy, purchase, sign in/up, log in, continue, confirm, yes, ok, pay, upgrade, try, get, start, install, download, reject) matched on the control label OR overlay text snippet "primary CTA" -> hmm: only the CONTROL label for trusted adapters; control label for generic. Any negative token in the control label -> deny.
+3. NEGATIVE labels (accept, agree, allow, subscribe, buy, purchase, sign in/up, log in, continue, confirm, yes, ok, pay, upgrade, try, get, start, install, download, reject, plus localized equivalents) matched as whole words in the CONTROL label -> deny. Precedence: negative beats close unless the entire normalized label is an exact close label.
 4. Control link/submit safety: ancestor/self `<a>` with href not http(s)/hash-only or cross-origin; `buttonType==='submit'`/inForm with action; -> deny.
 5. Trusted adapter + exact adapter-allowed label or selector -> allow (still subject to rules 1-4 and rate/attempt limits in Scanner).
 6. Generic only: label must be an EXACT whole-string close label (`×`, `✕`, `x`, `close`, `dismiss` + localized equivalents; NOT "no thanks"/"not now"/"skip" which are adapter-only).
