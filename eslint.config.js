@@ -6,7 +6,7 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ["scripts/**/*.mjs", "*.config.js", "*.config.ts"],
+    files: ["scripts/**/*.mjs", "test/**/*.mjs", "*.config.js", "*.config.ts"],
     languageOptions: {
       globals: { process: "readonly", console: "readonly", URL: "readonly" },
     },
@@ -18,6 +18,7 @@ export default tseslint.config(
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unused-expressions": "off",
       "@typescript-eslint/no-unused-vars": "off",
+      "no-empty-pattern": "off", // Playwright fixtures use `async ({}, use)`
     },
   },
 );
