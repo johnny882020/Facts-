@@ -6,7 +6,7 @@ test('popup: global enable toggle off -> positive fixture not closed', async ({ 
   const toggle = popup.locator('[data-testid="enabled"], #enabled').first();
   await expect(toggle).toBeChecked();
   await toggle.uncheck();
-  await expect.poll(() => popup.evaluate(async () => (await chrome.storage.local.get('settings')).settings?.enabled)).toBe(false);
+  await expect.poll(() => popup.evaluate(async () => ((await chrome.storage.local.get('settings')) as { settings?: { enabled?: boolean } }).settings?.enabled)).toBe(false);
   const page = await env.context.newPage();
   await page.goto(env.url('newsletter-modal.html'));
   await page.waitForTimeout(3000);

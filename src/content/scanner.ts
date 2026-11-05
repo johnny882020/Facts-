@@ -22,6 +22,7 @@ export class Scanner {
   private readonly now: () => number;
   private root: Document | ShadowRoot = document;
   private observer: MutationObserver | null = null;
+  private resizeObserver: ResizeObserver | null = null;
   private observedRoots = new WeakSet<Node>();
   private timer: ReturnType<typeof setTimeout> | null = null;
   private running = false;
@@ -48,6 +49,13 @@ export class Scanner {
     if (this.ownsGestures) this.gestures.start(root instanceof Document ? root : root.ownerDocument);
     this.observer = new MutationObserver(() => this.schedule());
     this.observe(root);
+    // A frame/container revealed by its *parent* (display:none -> visible) mutates nothing in this document,
+    // but does resize it. Rescan on resize so ad iframes shown late are still handled.
+    const el = root instanceof Document ? root.documentElement : null;
+    if (el && typeof ResizeObserver !== 'undefined') {
+      this.resizeObserver = new ResizeObserver(() => this.schedule());
+      this.resizeObserver.observe(el);
+    }
     this.schedule();
   }
 
@@ -55,6 +63,8 @@ export class Scanner {
     this.running = false;
     this.observer?.disconnect();
     this.observer = null;
+    this.resizeObserver?.disconnect();
+    this.resizeObserver = null;
     this.observedRoots = new WeakSet();
     if (this.timer !== null) clearTimeout(this.timer);
     this.timer = null;

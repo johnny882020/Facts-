@@ -32,6 +32,34 @@ function setup(opts: { find?: () => CloseTarget[]; check?: GuardCheck; trusted?:
 beforeEach(() => { document.body.innerHTML = ''; });
 
 describe('Scanner', () => {
+  it('rescans when the document is resized (frame revealed by its parent, no DOM mutation)', () => {
+    vi.useFakeTimers();
+    let resizeCb: () => void = () => {};
+    const disconnect = vi.fn();
+    vi.stubGlobal('ResizeObserver', class { constructor(cb: () => void) { resizeCb = cb; } observe() {} disconnect = disconnect; });
+    try {
+      const button = document.createElement('button');
+      button.textContent = 'Close';
+      document.body.appendChild(button);
+      let revealed = false; // flips WITHOUT touching this document's DOM, like a parent un-hiding the frame
+      const s = setup({ find: () => (revealed ? [{ adapter: 'stub', trusted: true, overlay: null, control: button, reason: 'r' }] : []) });
+      const click = vi.fn();
+      button.addEventListener('click', click);
+      s.sc.start();
+      vi.advanceTimersByTime(1000);
+      revealed = true;
+      vi.advanceTimersByTime(5000);
+      expect(click).not.toHaveBeenCalled(); // nothing triggers a rescan yet
+      resizeCb();
+      vi.advanceTimersByTime(1000);
+      expect(click).toHaveBeenCalledTimes(1);
+      s.sc.stop();
+      expect(disconnect).toHaveBeenCalled();
+    } finally {
+      vi.unstubAllGlobals();
+      vi.useRealTimers();
+    }
+  });
   it('clicks once when allowed and never re-clicks the same element', () => {
     const s = setup();
     const b = s.mk();
