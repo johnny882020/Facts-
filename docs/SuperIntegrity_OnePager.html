@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Super Integrity One-Pager</title>
+<style>
+:root{--bg:#f5f5f7;--card:#fff;--ink:#1d1d1f;--mute:#6e6e73;--line:#d2d2d7;--acc:#0071e3;--ok:#1a7f37;--warn:#b25e00;--bad:#c62828}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#000;--card:#1c1c1e;--ink:#f5f5f7;--mute:#a1a1a6;--line:#38383a;--acc:#2997ff;--ok:#30d158;--warn:#ff9f0a;--bad:#ff453a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.4 -apple-system,"SF Pro Text",Inter,system-ui,sans-serif}
+.page{max-width:1040px;margin:0 auto;padding:20px 16px}
+h1{font-size:24px;margin:0 0 2px;letter-spacing:-.02em}
+.sub{color:var(--mute);margin:0 0 12px}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);margin:14px 0 6px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.card h3{margin:0 0 4px;font-size:14px}
+.tag{display:inline-block;font-size:10px;font-weight:600;border-radius:99px;padding:1px 8px;border:1px solid var(--line);color:var(--mute);margin-bottom:6px}
+.card p{margin:4px 0}
+.k{font-weight:600}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}
+ul{margin:4px 0;padding-left:16px}
+li{margin:2px 0}
+svg{width:100%;height:auto;display:block}
+.src{font-size:10px;color:var(--mute)}
+.src a{color:var(--acc)}
+a{color:var(--acc)}
+@media (max-width:760px){.grid,.two{grid-template-columns:1fr}}
+@media print{@page{size:Letter;margin:.3in}body{background:#fff;color:#000;font-size:8.3px;line-height:1.28}.page{padding:0;max-width:none}.card{padding:6px;border-radius:8px;break-inside:avoid}.card h3{font-size:10.5px}.tag{font-size:8px;margin-bottom:3px}h1{font-size:17px}.sub{margin-bottom:5px}h2{margin:6px 0 3px;font-size:9px}.card p{margin:2px 0}li{margin:1px 0}svg{max-height:70px}.src{font-size:7px}}
+</style>
+</head>
+<body>
+<div class="page">
+<h1>Super Integrity: revised thesis</h1>
+<p class="sub">Checked against live sources on 12 Nov 2026. Rule: sell only money that a rule or a document already entitles the customer to, and prove it. Every number below has a source. Every price is a proposal, marked as such.</p>
+
+<h2>Three ideas, sequenced as one company</h2>
+<svg viewBox="0 0 960 92" role="img" aria-label="Sequence: land with tariff refund reconciliation, grow with ocean detention and demurrage defense, extend with pickup identity proof. All share one evidence packet layer.">
+  <rect x="2" y="4" width="300" height="52" rx="12" fill="none" stroke="currentColor" opacity=".5"/>
+  <text x="152" y="26" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">1 LAND: Tariff refund reconciliation</text>
+  <text x="152" y="44" text-anchor="middle" font-size="11" fill="currentColor" opacity=".7">urgent, one-time wave, 0-9 months</text>
+  <path d="M306 30h40" stroke="currentColor" opacity=".5" marker-end="url(#a)"/>
+  <rect x="330" y="4" width="300" height="52" rx="12" fill="none" stroke="#0071e3" stroke-width="2"/>
+  <text x="480" y="26" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">2 CORE: Ocean D&amp;D defense</text>
+  <text x="480" y="44" text-anchor="middle" font-size="11" fill="currentColor" opacity=".7">recurring, rule-driven, the real business</text>
+  <path d="M634 30h40" stroke="currentColor" opacity=".5"/>
+  <rect x="658" y="4" width="300" height="52" rx="12" fill="none" stroke="currentColor" opacity=".5"/>
+  <text x="808" y="26" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">3 EXTEND: Pickup identity proof</text>
+  <text x="808" y="44" text-anchor="middle" font-size="11" fill="currentColor" opacity=".7">fast-growing theft, high-value lanes</text>
+  <rect x="2" y="64" width="956" height="24" rx="8" fill="#0071e3" opacity=".12"/>
+  <text x="480" y="80" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">Shared layer: documents + events + rule + human approval = one evidence packet per dollar</text>
+</svg>
+
+<div class="grid">
+  <div class="card">
+    <span class="tag">1 · LAND · time-boxed</span>
+    <h3>Tariff refund reconciliation</h3>
+    <p class="k">Validated</p>
+    <ul>
+      <li>About $166B of IEEPA duty was collected. CBP reported about $121.75B in anticipated refunds processed by 10 Jul 2026.</li>
+      <li>CBP opened its refund portal (CAPE) on 20 Apr 2026. Phase 3 missed its 20 Aug target.</li>
+      <li>The trade court has said finally liquidated entries are refundable. Details are still contested.</li>
+    </ul>
+    <p class="k warn">Honest limit</p>
+    <p>CBP pays the importer of record directly. The wave is closing. This is an entry wedge, not a lasting business.</p>
+    <p class="k">Pain we solve</p>
+    <p>Which entries are still owed, which were paid, and who downstream is owed a share under contract.</p>
+    <p class="k">Buyer</p><p>VP Trade Compliance, CFO office.</p>
+    <p class="k">Model (proposal)</p><p>Fixed fee per reconciled entry batch, plus a small success fee on newly recovered duty.</p>
+    <p class="k">Kill test</p><p>Under 30 days, the pilot finds owed or misrouted refunds that the importer did not already know about.</p>
+  </div>
+  <div class="card">
+    <span class="tag">2 · CORE · recurring</span>
+    <h3>Ocean demurrage and detention defense</h3>
+    <p class="k">Validated</p>
+    <ul>
+      <li>FMC rule 46 CFR 541: an invoice missing required information releases the payer (541.5). The billing window is 30 days (541.7). Only 541.4 (who may be billed) was struck down in Sep 2025.</li>
+      <li>FMC counted about $15.4B of D&amp;D collected by nine carriers, Apr 2020 to Mar 2025 (about $3B a year).</li>
+    </ul>
+    <p class="k warn">Honest limit</p>
+    <p>No source gives the disputable share of D&amp;D. The pilot must measure it. No 2026 enforcement data was found.</p>
+    <p class="k">Pain we solve</p>
+    <p>Check every invoice against the rule and the contract before payment. Send a dispute with evidence.</p>
+    <p class="k">Buyer</p><p>Logistics / transportation director, AP.</p>
+    <p class="k">Model (proposal)</p><p>Platform minimum plus 15-25% of verified avoided charges. Benchmarks: 8-15% parcel audit, 25-50% freight audit (single vendor sources).</p>
+    <p class="k">Kill test</p><p>If the disputable share of D&amp;D spend is under 3% across 3 pilots, stop.</p>
+  </div>
+  <div class="card">
+    <span class="tag">3 · EXTEND · high-value lanes</span>
+    <h3>Pickup identity proof</h3>
+    <p class="k">Validated</p>
+    <ul>
+      <li>Cargo theft losses were $718.9M through Q3 2026, up 39% (CargoNet).</li>
+      <li>Q3 incidents fell 33% but average loss rose to about $448K. Fictitious pickups were about 25% of incidents. 19 thefts topped $1M.</li>
+    </ul>
+    <p class="k warn">Honest limit</p>
+    <p>Small pool next to freight spend. Many incumbents sell carrier vetting. No competitor scan was done yet.</p>
+    <p class="k">Pain we solve</p>
+    <p>Prove the right driver and carrier picked up the right load. Log it in the same evidence layer.</p>
+    <p class="k">Buyer</p><p>Supply chain risk, insurance, security.</p>
+    <p class="k">Model (proposal)</p><p>Per-pickup fee on high-value lanes only. Price against average loss, not against freight cost.</p>
+    <p class="k">Kill test</p><p>Insurer or shipper agrees to a premium or deductible credit for verified lanes.</p>
+  </div>
+</div>
+
+<div class="two">
+  <div>
+    <h2>Go to market</h2>
+    <div class="card">
+      <ol style="margin:0;padding-left:16px">
+        <li><span class="k">Who:</span> US importers with large ocean and customs spend. Start with 10 design partners, not a mass launch.</li>
+        <li><span class="k">Land:</span> a 30-day, read-only pilot. The customer uploads 12 months of entries and invoices. We show verified dollars. No integration needed.</li>
+        <li><span class="k">Prove:</span> every dollar has an evidence packet and a human approval. The customer's auditors can check it.</li>
+        <li><span class="k">Expand:</span> move from the refund pilot to the recurring D&amp;D contract within the same account.</li>
+        <li><span class="k">Channels:</span> customs brokers, 3PLs, and trade law firms that already hold the data and the trust. Offer them a referral share.</li>
+        <li><span class="k">Enterprise gate:</span> SSO, roles, audit log, and a SOC 2 start on day one. Sales cycles run long, so the fast pilot is the door.</li>
+      </ol>
+    </div>
+  </div>
+  <div>
+    <h2>Cut from the first plan, and why</h2>
+    <div class="card">
+      <ul>
+        <li><span class="k">Generic freight audit:</span> crowded. Only 1-3% of spend is recoverable by the most careful estimate, and no independent study exists.</li>
+        <li><span class="k">AI-hardware logistics:</span> real shortages, but no buyer or price was validated.</li>
+        <li><span class="k">Retailer deductions:</span> the evidence is vendor-only.</li>
+        <li><span class="k">Truck detention:</span> ATRI shows about $3.6B direct cost, but the carrier is the one underpaid. The shipper's savings chain needs more assumptions.</li>
+        <li><span class="k">"Integrity ledger" as a product:</span> no buyer asks for it. It stays a feature inside the three.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h2>What this page does not prove</h2>
+<p>No savings rate is independently proven. Prices are proposals. The market gap claim ("no one combines money, proof and compliance") rests on absence of evidence, so ten buyer interviews come first. The first plan's #1 idea (refunds) is demoted because CBP now pays most of it directly.</p>
+
+<p class="src">Sources: <a href="https://www.bdo.com/insights/tax/update-on-cbp-ieepa-refund-progress-and-new-orders-from-the-us-court-of-international-trade">BDO, CBP IEEPA refund progress</a> · <a href="https://www.foley.com/insights/publications/2026/09/what-every-multinational-should-know-about-securing-refunds-for-finally-liquidated-entries/">Foley, finally liquidated entries (Sep 2026)</a> · <a href="https://www.ecfr.gov/current/title-46/chapter-IV/subchapter-B/part-541">eCFR 46 CFR Part 541</a> · <a href="https://www.beneschlaw.com/insight/a-whole-new-world-fmc-issues-final-rule-on-demurrage-and-detention-billing-requirements/pdf/">Benesch on the FMC rule</a> · <a href="https://www.verisk.com/company/newsroom/fewer-cargo-thefts-bigger-losses-average-theft-value-jumps-72-percent-year-to-date/">Verisk CargoNet Q3 2026</a> · <a href="https://www.ccjdigital.com/regulations/article/16424466/cargo-theft-losses-climb-as-incidents-continue-to-decline">CCJ</a> · <a href="https://truckingresearch.org/wp-content/uploads/2024/09/ATRI-Costs-and-Consequences-of-Truck-Driver-Detention-09-2024.pdf">ATRI detention study (2024)</a> · <a href="https://gingercontrol.com/blog/freight-invoice-audit-guide">Ginger Control audit guide (vendor)</a>. The $15.4B FMC D&amp;D figure comes from the research notes (<code>research_notes/</code>) and was not re-opened at its primary source. Search summaries disagree on small details, such as the share of detention invoices paid.</p>
+</div>
+</body>
+</html>
